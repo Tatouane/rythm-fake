@@ -11,10 +11,7 @@ Client.on('messageCreate', message =>{
             let role = message.guild.roles.cache.find(r => r.id === `${roleID}`);
             
             if (!role) return message.channel.send(`Veuillez mentionner un rôle.`)
-            message.guild.members.cache.filter(m => !m.user.bot).forEach(member => member.roles.add(role.id)).catch(e =>{
-                console.log(e)
-                message.reply(`Il y a eu une erreur: ${e}`)
-            })
+            message.guild.members.cache.filter(m => !m.user.bot).forEach(member => member.roles.add(role.id))
             message.channel.send(`${message.author} a ajouté le rôle ${role.name} à tout les membres.`)
         }else{
             message.reply("Vous n'avez pas les permissions modérateur.");
@@ -28,10 +25,7 @@ Client.on('messageCreate', message =>{
             let role = message.guild.roles.cache.find(r => r.id === `${roleID}`);
             
             if (!role) return message.channel.send(`Veuillez mentionner un rôle.`)
-            message.guild.members.cache.filter(m => !m.user.bot).forEach(member => member.roles.remove(role)).catch(e =>{
-                console.log(e)
-                message.reply(`Il y a eu une erreur: ${e}`)
-            })
+            message.guild.members.cache.filter(m => !m.user.bot).forEach(member => member.roles.remove(role))
             message.channel.send(`${message.author} a enlevé le rôle ${role.name} à tout les membres.`)
         }else{
             message.reply("Vous n'avez pas les permissions modérateur.");
