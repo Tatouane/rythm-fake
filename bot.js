@@ -43,4 +43,4 @@ Client.on('ready', Client =>{
     console.log('Fake bot ready')
 })
 
-Client.login('OTMzNjYxMjU5NDk1MjUyMDI5.Yekxzg.UKCCZ6wnVD9ZkR8E-YrXg-yXxAE');
+Client.login(process.env.TOKEN);
